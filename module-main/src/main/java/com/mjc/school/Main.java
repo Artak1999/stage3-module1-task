@@ -1,6 +1,6 @@
 package com.mjc.school;
 
-import com.mjc.school.controller.Controller;
+import com.mjc.school.controller.implementation.Controller;
 import java.util.*;
 import static com.mjc.school.Menu.COMMAND_NOT_FOUND;
 
