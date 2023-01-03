@@ -1,7 +1,7 @@
 package com.mjc.school;
 
 import com.mjc.school.controller.Controller;
-import com.mjc.school.service.dto.Request;
+import com.mjc.school.service.dto.NewsDtoRequest;
 import com.mjc.school.service.exceptions.ServiceErrorException;
 import com.mjc.school.service.exceptions.ValidatorException;
 
@@ -39,7 +39,7 @@ public class Menu {
     }
 
     public void createNews(Controller controller, Scanner input) {
-        Request dtoRequest = null;
+        NewsDtoRequest dtoRequest = null;
         boolean isValid = false;
         while (!isValid) {
             try {
@@ -50,7 +50,7 @@ public class Menu {
                 String content = input.nextLine();
                 System.out.println(AUTHOR_ID_ENTER);
                 Long authorId = getKeyboardNumber(AUTHOR_ID, input);
-                dtoRequest = new Request(null, title, content, authorId);
+                dtoRequest = new NewsDtoRequest(null, title, content, authorId);
                 isValid = true;
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());
@@ -60,7 +60,7 @@ public class Menu {
     }
 
     public void updateNews(Controller newsController, Scanner keyboard) {
-        Request dtoRequest = null;
+        NewsDtoRequest dtoRequest = null;
         boolean isValid = false;
         while (!isValid) {
             try {
@@ -73,7 +73,7 @@ public class Menu {
                 String content = keyboard.nextLine();
                 System.out.println(AUTHOR_ID_ENTER);
                 Long authorId = getKeyboardNumber(AUTHOR_ID, keyboard);
-                dtoRequest = new Request(newsId, title, content, authorId);
+                dtoRequest = new NewsDtoRequest(newsId, title, content, authorId);
                 isValid = true;
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());

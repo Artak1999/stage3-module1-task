@@ -2,7 +2,7 @@ package com.mjc.school.service.dto;
 
 import java.time.LocalDateTime;
 
-public record Response(
+public record NewsDtoResponse(
         Long id,
         String title,
         String content,

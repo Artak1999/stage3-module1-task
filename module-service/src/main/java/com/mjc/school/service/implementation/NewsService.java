@@ -3,8 +3,8 @@ package com.mjc.school.service.implementation;
 import com.mjc.school.repository.model.NewsModel;
 import com.mjc.school.repository.interfaces.Repository;
 import com.mjc.school.repository.factory.RepositoryFactory;
-import com.mjc.school.service.dto.Request;
-import com.mjc.school.service.dto.Response;
+import com.mjc.school.service.dto.NewsDtoRequest;
+import com.mjc.school.service.dto.NewsDtoResponse;
 import com.mjc.school.service.exceptions.NotFoundException;
 import com.mjc.school.service.interfaces.ModelMapper;
 import com.mjc.school.service.interfaces.Service;
@@ -16,7 +16,7 @@ import java.util.List;
 import static com.mjc.school.service.validate.Validate.getNewsValidator;
 import static com.mjc.school.service.exceptions.ServiceErrorException.NEWS_ID_DOES_NOT_EXIST;
 
-public class NewsService implements Service<Request, Response> {
+public class NewsService implements Service<NewsDtoRequest, NewsDtoResponse> {
     private final Repository<NewsModel> newsRepository;
     private final Validate newsValidator;
     private ModelMapper mapper = Mappers.getMapper(ModelMapper.class);
@@ -27,12 +27,12 @@ public class NewsService implements Service<Request, Response> {
     }
 
     @Override
-    public List<Response> readAll() {
+    public List<NewsDtoResponse> readAll() {
         return mapper.modelListToDtoList(newsRepository.readAll());
     }
 
     @Override
-    public Response readById(Long newsId) {
+    public NewsDtoResponse readById(Long newsId) {
         newsValidator.validateNewsId(newsId);
         if (newsRepository.isExistById(newsId)) {
             NewsModel newsModel = newsRepository.readById(newsId);
@@ -43,7 +43,7 @@ public class NewsService implements Service<Request, Response> {
     }
 
     @Override
-    public Response create(Request dtoRequest) {
+    public NewsDtoResponse create(NewsDtoRequest dtoRequest) {
         newsValidator.validateNewsDto(dtoRequest);
         NewsModel model = mapper.dtoToModel(dtoRequest);
         LocalDateTime date = LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS);
@@ -54,7 +54,7 @@ public class NewsService implements Service<Request, Response> {
     }
 
     @Override
-    public Response update(Request dtoRequest) {
+    public NewsDtoResponse update(NewsDtoRequest dtoRequest) {
         newsValidator.validateNewsId(dtoRequest.id());
         newsValidator.validateNewsDto(dtoRequest);
         if (newsRepository.isExistById(dtoRequest.id())) {

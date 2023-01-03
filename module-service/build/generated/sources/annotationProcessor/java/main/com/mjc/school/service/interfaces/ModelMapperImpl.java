@@ -1,8 +1,8 @@
 package com.mjc.school.service.interfaces;
 
 import com.mjc.school.repository.model.NewsModel;
-import com.mjc.school.service.dto.Request;
-import com.mjc.school.service.dto.Response;
+import com.mjc.school.service.dto.NewsDtoRequest;
+import com.mjc.school.service.dto.NewsDtoResponse;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,18 +10,18 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-01-03T15:03:39+0400",
+    date = "2023-01-03T15:12:47+0400",
     comments = "version: 1.4.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.2.jar, environment: Java 17.0.5 (Amazon.com Inc.)"
 )
 public class ModelMapperImpl implements ModelMapper {
 
     @Override
-    public List<Response> modelListToDtoList(List<NewsModel> newsModelList) {
+    public List<NewsDtoResponse> modelListToDtoList(List<NewsModel> newsModelList) {
         if ( newsModelList == null ) {
             return null;
         }
 
-        List<Response> list = new ArrayList<Response>( newsModelList.size() );
+        List<NewsDtoResponse> list = new ArrayList<NewsDtoResponse>( newsModelList.size() );
         for ( NewsModel newsModel : newsModelList ) {
             list.add( modelToDto( newsModel ) );
         }
@@ -30,7 +30,7 @@ public class ModelMapperImpl implements ModelMapper {
     }
 
     @Override
-    public Response modelToDto(NewsModel newsModel) {
+    public NewsDtoResponse modelToDto(NewsModel newsModel) {
         if ( newsModel == null ) {
             return null;
         }
@@ -49,13 +49,13 @@ public class ModelMapperImpl implements ModelMapper {
         lastUpdatedDate = newsModel.getLastUpdatedDate();
         authorId = newsModel.getAuthorId();
 
-        Response response = new Response( id, title, content, createDate, lastUpdatedDate, authorId );
+        NewsDtoResponse newsDtoResponse = new NewsDtoResponse( id, title, content, createDate, lastUpdatedDate, authorId );
 
-        return response;
+        return newsDtoResponse;
     }
 
     @Override
-    public NewsModel dtoToModel(Request newsModelRequest) {
+    public NewsModel dtoToModel(NewsDtoRequest newsModelRequest) {
         if ( newsModelRequest == null ) {
             return null;
         }
