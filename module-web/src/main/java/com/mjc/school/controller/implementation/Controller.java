@@ -3,11 +3,11 @@ package com.mjc.school.controller.implementation;
 import com.mjc.school.service.dto.NewsDtoRequest;
 import com.mjc.school.service.dto.NewsDtoResponse;
 import com.mjc.school.service.factory.Factory;
-import com.mjc.school.service.interfaces.Service;
+import com.mjc.school.service.interfaces.NewsService;
 import java.util.List;
 
 public class Controller {
-    private final Service<NewsDtoRequest, NewsDtoResponse> service;
+    private final NewsService<NewsDtoRequest, NewsDtoResponse> service;
 
     public Controller() {
         service = Factory.getInstance().getNewsService();
