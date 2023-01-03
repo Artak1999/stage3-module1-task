@@ -1,9 +1,7 @@
 package com.mjc.school;
 
 import com.mjc.school.controller.Controller;
-
 import java.util.*;
-
 import static com.mjc.school.Menu.COMMAND_NOT_FOUND;
 
 public class Main {

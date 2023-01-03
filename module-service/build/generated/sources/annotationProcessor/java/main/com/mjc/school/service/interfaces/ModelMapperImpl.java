@@ -1,8 +1,8 @@
 package com.mjc.school.service.interfaces;
 
-import com.mjc.school.repository.NewsModel;
-import com.mjc.school.service.Request;
-import com.mjc.school.service.Response;
+import com.mjc.school.repository.model.NewsModel;
+import com.mjc.school.service.dto.Request;
+import com.mjc.school.service.dto.Response;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-01-03T14:39:41+0400",
+    date = "2023-01-03T15:03:39+0400",
     comments = "version: 1.4.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.2.jar, environment: Java 17.0.5 (Amazon.com Inc.)"
 )
 public class ModelMapperImpl implements ModelMapper {

@@ -1,4 +1,6 @@
-package com.mjc.school.service;
+package com.mjc.school.service.factory;
+
+import com.mjc.school.service.implementation.NewsService;
 
 public class Factory {
     private static Factory instance;

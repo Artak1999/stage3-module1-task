@@ -1,11 +1,14 @@
-package com.mjc.school.repository;
+package com.mjc.school.repository.model.data;
+
+import com.mjc.school.repository.model.AuthorModel;
+import com.mjc.school.repository.model.NewsModel;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import static com.mjc.school.repository.Utils.getRandomContentByFilePath;
-import static com.mjc.school.repository.Utils.getRandomDate;
+import static com.mjc.school.repository.utils.Utils.getRandomContentByFilePath;
+import static com.mjc.school.repository.utils.Utils.getRandomDate;
 
 public class NewsData {
     private final static String CONTENT_FILE_NAME = "content";

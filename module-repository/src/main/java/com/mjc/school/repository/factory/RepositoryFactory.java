@@ -1,4 +1,8 @@
-package com.mjc.school.repository;
+package com.mjc.school.repository.factory;
+
+import com.mjc.school.repository.model.NewsModel;
+import com.mjc.school.repository.implementation.NewsRepository;
+import com.mjc.school.repository.interfaces.Repository;
 
 public class RepositoryFactory {
     private static RepositoryFactory instance;

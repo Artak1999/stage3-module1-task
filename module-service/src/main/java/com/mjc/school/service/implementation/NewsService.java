@@ -1,16 +1,19 @@
-package com.mjc.school.service;
+package com.mjc.school.service.implementation;
 
-import com.mjc.school.repository.NewsModel;
-import com.mjc.school.repository.Repository;
-import com.mjc.school.repository.RepositoryFactory;
+import com.mjc.school.repository.model.NewsModel;
+import com.mjc.school.repository.interfaces.Repository;
+import com.mjc.school.repository.factory.RepositoryFactory;
+import com.mjc.school.service.dto.Request;
+import com.mjc.school.service.dto.Response;
 import com.mjc.school.service.exceptions.NotFoundException;
 import com.mjc.school.service.interfaces.ModelMapper;
 import com.mjc.school.service.interfaces.Service;
+import com.mjc.school.service.validate.Validate;
 import org.mapstruct.factory.Mappers;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
-import static com.mjc.school.service.Validate.getNewsValidator;
+import static com.mjc.school.service.validate.Validate.getNewsValidator;
 import static com.mjc.school.service.exceptions.ServiceErrorException.NEWS_ID_DOES_NOT_EXIST;
 
 public class NewsService implements Service<Request, Response> {

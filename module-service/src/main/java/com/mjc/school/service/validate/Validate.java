@@ -1,5 +1,6 @@
-package com.mjc.school.service;
+package com.mjc.school.service.validate;
 
+import com.mjc.school.service.dto.Request;
 import com.mjc.school.service.exceptions.ValidatorException;
 import static com.mjc.school.service.exceptions.ServiceErrorException.*;
 

@@ -1,7 +1,7 @@
 package com.mjc.school;
 
 import com.mjc.school.controller.Controller;
-import com.mjc.school.service.Request;
+import com.mjc.school.service.dto.Request;
 import com.mjc.school.service.exceptions.ServiceErrorException;
 import com.mjc.school.service.exceptions.ValidatorException;
 

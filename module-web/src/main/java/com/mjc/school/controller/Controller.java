@@ -1,8 +1,8 @@
 package com.mjc.school.controller;
 
-import com.mjc.school.service.Factory;
-import com.mjc.school.service.Request;
-import com.mjc.school.service.Response;
+import com.mjc.school.service.factory.Factory;
+import com.mjc.school.service.dto.Request;
+import com.mjc.school.service.dto.Response;
 import com.mjc.school.service.interfaces.Service;
 import java.util.List;
 

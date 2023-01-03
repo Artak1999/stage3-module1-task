@@ -1,8 +1,10 @@
-package com.mjc.school.repository;
+package com.mjc.school.repository.model.data;
+
+import com.mjc.school.repository.model.AuthorModel;
 
 import java.util.ArrayList;
 import java.util.List;
-import static com.mjc.school.repository.Utils.getRandomContentByFilePath;
+import static com.mjc.school.repository.utils.Utils.getRandomContentByFilePath;
 
 public class AuthorData {
     private final static String AUTHORS_FILE_NAME = "authors";
