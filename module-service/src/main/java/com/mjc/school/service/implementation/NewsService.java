@@ -7,6 +7,7 @@ import com.mjc.school.service.dto.NewsDtoRequest;
 import com.mjc.school.service.dto.NewsDtoResponse;
 import com.mjc.school.service.exceptions.NotFoundException;
 import com.mjc.school.service.interfaces.ModelMapper;
+import com.mjc.school.service.interfaces.Service;
 import com.mjc.school.service.validate.Validate;
 import org.mapstruct.factory.Mappers;
 import java.time.LocalDateTime;
@@ -15,7 +16,7 @@ import java.util.List;
 import static com.mjc.school.service.validate.Validate.getNewsValidator;
 import static com.mjc.school.service.exceptions.ServiceErrorException.NEWS_ID_DOES_NOT_EXIST;
 
-public class NewsService implements com.mjc.school.service.interfaces.NewsService<NewsDtoRequest, NewsDtoResponse> {
+public class NewsService implements Service<NewsDtoRequest, NewsDtoResponse> {
     private final Repository<NewsModel> newsRepository;
     private final Validate newsValidator;
     private ModelMapper mapper = Mappers.getMapper(ModelMapper.class);
